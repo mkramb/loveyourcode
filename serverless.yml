@@ -1,0 +1,29 @@
+service: loveyourcode
+
+frameworkVersion: "=1.24.1"
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  webpackIncludeModules: true
+  serverless-offline:
+    port: 4000
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: eu-west-2
+
+functions:
+  loveyourcode:
+    handler: app/handler.github
+    name: loveyourcode
+    environment:
+      WEBHOOK_SECRET: webhook_nVutFaldx6QG98K1jv7e
+      APP_ID: 7191
+    events:
+      - http:
+          path: /
+          method: post
