@@ -1,5 +1,5 @@
 import * as createProbot from './probot'
-import * as loveyourcodeCert from '../cert/loveyourcode.pem'
+import * as loveyourcodeCert from '../private-key.pem'
 import { receiver } from './receiver'
 
 const probot = createProbot({
