@@ -3,7 +3,7 @@ import {
   getAdditions,
   getMatches,
   IAddition
-} from '../services'
+} from '../utils'
 
 export const CONFIG_FILE = 'loveyourcode.yml'
 

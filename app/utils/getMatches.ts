@@ -1,12 +1,12 @@
 import { keys } from 'ramda'
-import * as minimatch from 'minimatch'
-import { IAddition } from '../services'
+import * as multimatch from 'multimatch'
+import { IAddition } from '../utils'
 
 const matchContent = config => {
   const labels = keys(config)
 
   return content => labels.some(label => (
-    minimatch(content, config[label], { nocase: true })
+    multimatch(content, config[label]).length > 0
   ))
 }
 
